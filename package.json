@@ -8,8 +8,7 @@
   },
   "scripts": {
     "start": "node .",
-    "pretest": "npm run mocha",
-    "test": "mocha",
+    "test": "npm run compile && mocha",
     "compile": "babel src --stage 1 --out-dir lib --source-maps --optional runtime",
     "watch": "babel src --stage 1 --out-dir lib --source-maps --optional runtime --watch"
   },

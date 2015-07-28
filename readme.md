@@ -2,6 +2,10 @@
 
 Create a cancellable promise that will be resolved in a specified amount of time.
 
+[![Build Status](https://travis-ci.org/seangenabe/delayer.svg?branch=master)](https://travis-ci.org/seangenabe/delayer)
+[![Dependency Status](https://david-dm.org/seangenabe/delayer.svg)](https://david-dm.org/seangenabe/delayer)
+[![devDependency Status](https://david-dm.org/seangenabe/delayer/dev-status.svg)](https://david-dm.org/seangenabe/delayer#info=devDependencies)
+
 ## Usage
 
 ### API
