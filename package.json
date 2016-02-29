@@ -2,15 +2,17 @@
   "name": "delayer",
   "version": "1.0.1",
   "description": "Create a cancellable promise that will be resolved in a specified amount of time.",
-  "main": "lib/delayer.js",
+  "main": "dist/delayer.js",
   "bin": {
     "delayer": "./bin/delayer"
   },
   "scripts": {
     "start": "node .",
-    "test": "npm run compile && mocha",
-    "compile": "babel src --stage 1 --out-dir lib --source-maps --optional runtime",
-    "watch": "babel src --stage 1 --out-dir lib --source-maps --optional runtime --watch"
+    "pretest": "npm run compile",
+    "test": "ava",
+    "compile": "babel lib --out-dir dist",
+    "watch": "npm run compile -- --watch",
+    "prepublish": "npm run compile"
   },
   "repository": {
     "type": "git",
@@ -29,12 +31,17 @@
   },
   "homepage": "https://github.com/seangenabe/delayer",
   "devDependencies": {
-    "babel": "^5.8.5",
-    "chai": "^3.2.0",
-    "chai-as-promised": "^5.1.0",
-    "mocha": "^2.2.5"
+    "ava": "^0.12.0",
+    "babel-cli": "^6.5.1",
+    "babel-plugin-transform-async-to-generator": "^6.5.0"
   },
-  "dependencies": {
-    "babel-runtime": "^5.8.5"
+  "babel": {
+    "plugins": [
+      "transform-async-to-generator"
+    ],
+    "sourceMaps": true
+  },
+  "engines": {
+    "node": ">=4"
   }
 }

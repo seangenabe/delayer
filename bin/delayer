@@ -1,2 +1,2 @@
 #!/usr/bin/env node
-require('..').console()
+require('..').cli(process.argv)
