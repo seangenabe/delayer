@@ -3,9 +3,8 @@
 Create a cancellable promise that will be resolved in a specified amount of time.
 
 [![npm](https://img.shields.io/npm/v/delayer.svg?style=flat-square)](https://www.npmjs.com/package/delayer)
-[![Build Status](https://travis-ci.org/seangenabe/delayer.svg?branch=master)](https://travis-ci.org/seangenabe/delayer)
-[![Dependency Status](https://david-dm.org/seangenabe/delayer.svg)](https://david-dm.org/seangenabe/delayer)
-[![devDependency Status](https://david-dm.org/seangenabe/delayer/dev-status.svg)](https://david-dm.org/seangenabe/delayer#info=devDependencies)
+[![Build Status](https://img.shields.io/travis/seangenabe/delayer/master.svg?style=flat-square)](https://travis-ci.org/seangenabe/delayer)
+[![devDependency Status](https://img.shields.io/david/dev/seangenabe/delayer.svg?style=flat-square)](https://david-dm.org/seangenabe/delayer#info=devDependencies)
 [![node](https://img.shields.io/node/v/delayer.svg?style=flat-square)](https://nodejs.org/en/download/)
 
 ## Usage
