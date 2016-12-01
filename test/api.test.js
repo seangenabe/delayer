@@ -3,7 +3,7 @@ const Delayer = require('..')
 const Promise = require('./promise') // https://github.com/avajs/ava/issues/947
 
 const promiseSpecies = Object.getOwnPropertyDescriptor(Promise, Symbol.species)
-const speciesSupport = 'get' in promiseSpecies && Promise[Symbol.species] === Promise
+const speciesSupport = promiseSpecies && 'get' in promiseSpecies && Promise[Symbol.species] === Promise
 
 test('create a new instance of Delayer', t => {
   let d = new Delayer(4)

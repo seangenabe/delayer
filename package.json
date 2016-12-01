@@ -2,7 +2,7 @@
   "name": "delayer",
   "version": "2.0.0",
   "description": "Create a cancellable promise that will be resolved in a specified amount of time.",
-  "main": "dist/delayer.js",
+  "main": "dist/index.js",
   "bin": {
     "delayer": "./bin/delayer"
   },
