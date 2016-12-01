@@ -8,11 +8,11 @@
   },
   "scripts": {
     "start": "node .",
-    "pretest": "npm run compile",
+    "pretest": "npm run build",
     "test": "ava",
-    "compile": "babel lib --out-dir dist",
-    "watch": "npm run compile -- --watch",
-    "prepublish": "npm run compile"
+    "build": "babel lib --out-dir dist",
+    "watch": "npm run build -- --watch",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -31,17 +31,20 @@
   },
   "homepage": "https://github.com/seangenabe/delayer",
   "devDependencies": {
-    "ava": "^0.12.0",
-    "babel-cli": "^6.5.1",
-    "babel-plugin-transform-async-to-generator": "^6.5.0"
-  },
-  "babel": {
-    "plugins": [
-      "transform-async-to-generator"
-    ],
-    "sourceMaps": true
+    "ava": "^0.17.0",
+    "babel-cli": "^6.18.0",
+    "babel-plugin-flow-comments": "^6.3.19",
+    "babel-plugin-transform-async-to-generator": "^6.16.0",
+    "babel-plugin-transform-strict-mode": "^6.18.0",
+    "eslint": "^3.11.1",
+    "eslint-config-mirage": "^2.1.0"
   },
   "engines": {
     "node": ">=4"
+  },
+  "ava": {
+    "files": [
+      "test/*.test.js"
+    ]
   }
 }
