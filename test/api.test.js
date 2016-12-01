@@ -15,7 +15,6 @@ test('create a new instance of Delayer', t => {
     t.true(d instanceof Promise)
   }
   t.is(d.delay, 4)
-  t.true(d.promise instanceof Promise)
   // not ok to be called as a function
   t.throws(() => Delayer(4))
 })
@@ -25,21 +24,11 @@ test('can be created without arguments', t => {
   t.true(d.delay === 0)
 })
 
-if (speciesSupport) {
-
-  test('species features', t => {
-    let d = new Delayer()
-    t.is(d.promise, d)
-    t.is(Delayer[Symbol.species], Promise)
-  })
-
-}
-
 test('resolves after the specified amount of time', async t => {
   const DURATION = 200
   let time = process.hrtime()
   let d = new Delayer(DURATION)
-  await d.promise
+  await d
   let diff = process.hrtime(time)
   t.true(diff[0] < 5)
 })
@@ -53,7 +42,7 @@ test('should be cancellable', async t => {
     d.cancel()
   }, SHORT_DURATION)
   try {
-    await d.promise
+    await d
     t.fail()
   }
   catch (err) {
