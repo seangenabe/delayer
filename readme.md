@@ -7,33 +7,44 @@ Create a cancellable promise that will be resolved in a specified amount of time
 [![devDependency Status](https://img.shields.io/david/dev/seangenabe/delayer.svg?style=flat-square)](https://david-dm.org/seangenabe/delayer#info=devDependencies)
 [![node](https://img.shields.io/node/v/delayer.svg?style=flat-square)](https://nodejs.org/en/download/)
 
-## Usage
+## API
 
-### API
-    const Delayer = require('delayer')
+```javascript
+const Delayer = require('delayer')
 
-#### Constructor
+// example usage
+let d = new Delayer(1000)
+d.then(onFulfilled, onRejected)
+```
 
-    let d = new Delayer(delay)
+On supported environments, `Delayer` extends from `Promise` but returns `Promise` objects from `Promise.prototype` methods.
 
+The weird stuff that led to this disconnect include:
+* [`Promise[Symbol.species]`](http://kangax.github.io/compat-table/es6/#test-Promise_Promise[Symbol.species]) - node.js 6.5; Chrome 51
+
+### Constructor
+
+```javascript
+let d = new Delayer(delay)
+```
+
+Creates a new instance of `Delayer` which creates an associated promise, which either resolves after the specified amount of time or rejects when `cancel` is called.
+
+On supported environments, the associated promise is equivalent to the `Delayer` instance. On older environments, the associated promise is hidden; `Promise` prototype methods are proxied to the promise, making the instance a valid thenable.
+
+Parameters:
 * `delay`: The amount of time to delay, in milliseconds.
 
-#### `d.promise`
+### `d.delay`
 
-A reference to the created `Promise` object.
+The delay passed to the constructor.
 
-#### `d.delay`
-
-The delay passed to the Delayer.
-
-#### `d.cancel()`
+### `d.cancel()`
 
 Cancels the delayed promise. This will put the promise in a rejected state.
 
-### CLI
+## CLI
 
-    delayer [delay]
-
-## License
-
-MIT
+```bash
+delayer [delay]
+```

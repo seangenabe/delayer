@@ -2,6 +2,7 @@
   "plugins": [
     "transform-async-to-generator",
     "transform-strict-mode",
+    "transform-es2015-parameters",
     "flow-comments"
   ],
   "sourceMaps": true
