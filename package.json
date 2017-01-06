@@ -37,7 +37,7 @@
     "babel-plugin-transform-async-to-generator": "^6.16.0",
     "babel-plugin-transform-es2015-parameters": "^6.18.0",
     "babel-plugin-transform-strict-mode": "^6.18.0",
-    "eslint": "^3.11.1",
+    "eslint": "^3.13.0",
     "eslint-config-mirage": "^2.1.0"
   },
   "engines": {
