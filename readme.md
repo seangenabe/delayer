@@ -1,6 +1,6 @@
 # delayer
 
-DEPRECATED. Please use [delay](https://github.com/sindresorhus/delay) instead.
+**DEPRECATED.** Please use [delay](https://github.com/sindresorhus/delay) instead.
 
 Create a cancellable promise that will be resolved in a specified amount of time.
 
