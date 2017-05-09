@@ -1,5 +1,7 @@
 # delayer
 
+DEPRECATED. Please use [delay](https://github.com/sindresorhus/delay) instead.
+
 Create a cancellable promise that will be resolved in a specified amount of time.
 
 [![npm](https://img.shields.io/npm/v/delayer.svg?style=flat-square)](https://www.npmjs.com/package/delayer)
